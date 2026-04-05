@@ -5,103 +5,237 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" rel="stylesheet">
 </head>
-<body>
-    <nav class="bg-white shadow">
-        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between">
-            <h1 class="font-bold text-xl">MyPortfolio</h1>
-
-            <div class="space-x-4">
-                <a href=".home" class="hover:text-blue-500">Home</a>
-                <a href=".about" class="hover:text-blue-500">About</a>
-                <a href=".projects" class="hover:text-blue-500">Projects</a>
-                <a href=".contact" class="hover:text-blue-500">Contact</a>
+<body class="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white min-h-screen">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-black/80 backdrop-blur-md z-50 py-4">
+        <div class="max-w-6xl mx-auto px-6 flex justify-between items-center">
+            <!-- Logo/Nama -->
+            <div class="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                Z_Forz
             </div>
+            
+            <!-- Menu Desktop -->
+            <ul class="hidden md:flex space-x-8">
+                <li><a href="#home" class="hover:text-purple-400 transition-colors font-medium">Home</a></li>
+                <li><a href="#about" class="hover:text-purple-400 transition-colors font-medium">About</a></li>
+                <li><a href="#projects" class="hover:text-purple-400 transition-colors font-medium">Projects</a></li>
+                <li><a href="#contact" class="hover:text-purple-400 transition-colors font-medium">Contact</a></li>
+            </ul>
+
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
         </div>
     </nav>
+
     <!-- Home Section -->
-    <div class="font-serif bg-purple-600 text-white">
-        <section class="" id="home">
-            <div class="grid h-auto grid-cols-2 place-items-center gap-4 px-40 py-20" >
-                <div class="text-start">
-                    <div class="">
-                        <h1 class="text-2xl font-semibold indent-2">Muhammad Taufiqurrohman</h1>
-                        <p class="text-md text-gray-400 font-bold text-6xl w-150">Desain Grafis<br> dan Web Developer</p>
-                        <p class="text-xl indent-8 p-4">
-                            Desain grafis adalah seni komunikasi visual menggunakan elemen gambar, teks, dan tata letak untuk menyampaikan pesan. 
-                            Sementara itu, Web Developer adalah profesi teknis yang membangun, memprogram, dan memelihara fungsionalitas situs web. 
-                            Keduanya berkolaborasi: Desainer membuat konsep visual, dan Developer mewujudkannya menjadi situs fungsional.
-                        </p>
+    <section id="home" class="min-h-screen flex items-center justify-center pt-20 px-6">
+        <div class="max-w-4xl text-center">
+            <img src="profile.jpg" 
+                 alt="Profile" class="w-48 h-48 rounded-full mx-auto mb-8 shadow-2xl border-4 border-purple-500">
+            <h1 class="text-5xl md:text-7xl font-bold bg-gradient-to-r from-purple-400 via-pink-400 to-purple-500 bg-clip-text text-transparent mb-6">
+                MUhammad Taufiqurrohman
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto">
+                Webdeveloper and Design Grafis<br>
+                I'm a Webdeveloper and Design Grafis Junior
+            </p>
+            <a href="#projects" class="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-xl">
+                Lihat Proyek Saya
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-32 px-6 bg-black/30">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-20 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent h-14">
+                Tentang Saya
+            </h2>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <p class="text-xl text-gray-300 leading-relaxed mb-8">
+                        Hallo! Saya Muhammad Taufiqurrohman, seorang Design Grafis dan Webdeveloper Junior.
+                        Saya memiliki ketertarikkan pada dunia desain grafis dan web development.
+                        Saya bergabung kedunia desain grafis dan web developer pada tahun 2024.
+                    </p>
+                    <ul class="space-y-4 text-lg">
+                        <li class="flex items-center">
+                            <span class="w-3 h-3 bg-purple-500 rounded-full mr-4"></span>
+                            Design: Adobe Ilustrator, Figma, Canva
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-3 h-3 bg-purple-500 rounded-full mr-4"></span>
+                            Frontend: tailwindcss
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-3 h-3 bg-purple-500 rounded-full mr-4"></span>
+                            Backend: Node.js, php
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-3 h-3 bg-purple-500 rounded-full mr-4"></span>
+                            Database: MySQL, MongoDB
+                        </li>
+                    </ul>
+                </div>
+                <div class="relative">
+                    <img src="" 
+                         alt="About" class="rounded-2xl shadow-2xl w-full h-96 object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-32 px-6">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-20 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent h-14">
+                Project
+            </h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project Card 1 -->
+                <div class="group bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 hover:border-purple-500 transition-all duration-300 hover:scale-105 hover:bg-white/20">
+                    <div class="relative overflow-hidden rounded-xl mb-6 h-48">
+                        <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=300&fit=crop" 
+                             alt="E-commerce" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     </div>
-                    <div class="pl-4">
-                        <a href="" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Download CV</a>
+                    <h3 class="text-2xl font-bold mb-3">E-Commerce Platform</h3>
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        Platform e-commerce modern dengan fitur pembayaran gateway, admin dashboard, dan responsive design.
+                    </p>
+                    <div class="flex space-x-2 mb-6">
+                        <span class="px-3 py-1 bg-purple-500/30 text-purple-300 rounded-full text-sm">React</span>
+                        <span class="px-3 py-1 bg-blue-500/30 text-blue-300 rounded-full text-sm">Node.js</span>
+                        <span class="px-3 py-1 bg-green-500/30 text-green-300 rounded-full text-sm">MongoDB</span>
                     </div>
-                </div>  
-                <div class="h-100 w-100 bg-gray-300 rounded-full">
-                    <input class="" type="image" src="" alt="">
-                </div>
-            </div>
-        </section>
-
-        <!-- About Section -->
-        <section class="" id="about">
-            <div class="grid max-w-6xl mx-auto px-4 py-20 place-items-center">
-                <h2 class="text-4xl font-bold mb-4">About Me</h2>
-                <p class="text-lg text-center">
-                    Saya adalah seorang desainer grafis dan web developer dengan pengalaman dalam menciptakan desain visual yang menarik dan membangun situs web yang fungsional. 
-                    Saya memiliki keahlian dalam menggunakan berbagai alat desain seperti Adobe Illustrator dan Figma, serta kemampuan pemrograman dengan HTML, CSS, JavaScript, dan php.
-                </p>
-            </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section class="" id="projects">
-            <div class="grid max-w-6xl mx-auto px-4 py-4 place-items-center">
-                <h2 class="text-4xl font-bold mb-4">My Projects</h2>
-                <p class="text-lg text-center">
-                    Berikut adalah beberapa proyek yang telah saya kerjakan:
-                </p>
-            </div>
-            <div class="flex items-center justify-center">
-                <!-- Project Items -->
-                <div class="max-w-sm bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition">
-                <!-- Foto -->
-                    <img  class="w-full h-48 object-cover p-4" src="profile.jpeg"  alt="" >
-                    <!-- Content -->
-                    <div class="p-5">
-                        <h2 class="text-xl font-bold text-gray-800 mb-2"> Judul Foto </h2>
-                        <p class="text-gray-600 text-sm"> Ini adalah deskripsi singkat dari foto. Kamu bisa menambahkan penjelasan sesuai kebutuhan di sini.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="flex-1 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white py-3 px-6 rounded-xl text-center font-semibold transition-all duration-300">Live Demo</a>
+                        <a href="#" class="flex-1 border border-white/30 hover:border-purple-500 text-white py-3 px-6 rounded-xl text-center font-semibold transition-all duration-300">GitHub</a>
                     </div>
                 </div>
-            </div>
-        </section>
 
-         <!-- Contact Section -->
-         <section class="" id="contact">
-            <div class="grid max-w-6xl mx-auto px-4 py-20 place-items-center">
-                <h2 class="text-4xl font-bold mb-4">Contact Me</h2>
-                <p class="text-lg text-center">
-                    Jika Anda tertarik untuk bekerja sama atau memiliki pertanyaan, jangan ragu untuk menghubungi saya melalui email di <a href="mailto:example@email.com" class="text-blue-500 hover:underline">example@email.com</a> atau melalui media sosial saya di Instagram, TikTok, dan YouTube.
-                </p>
-            </div>
-        </section>
-
-        <!-- Footer -->
-        <footer class="bg-gray-100">
-            <div class="max-w-6xl mx-auto px-4 py-6 justify-around grid grid-flow-col justify-items-center place-items-center">
-
-                <div class="">
-                    <div class="rounded-xl bg-amber-400 w-10 h-10"></div>
+                <!-- Project Card 2 -->
+                <div class="group bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 hover:border-purple-500 transition-all duration-300 hover:scale-105 hover:bg-white/20">
+                    <div class="relative overflow-hidden rounded-xl mb-6 h-48 bg-gradient-to-br from-blue-500 to-purple-600">
+                        <div class="absolute inset-0 flex items-center justify-center text-white font-bold text-2xl opacity-20">Dashboard</div>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Admin Dashboard</h3>
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        Dashboard admin lengkap dengan chart interaktif, real-time data, dan sistem autentikasi JWT.
+                    </p>
+                    <div class="flex space-x-2 mb-6">
+                        <span class="px-3 py-1 bg-indigo-500/30 text-indigo-300 rounded-full text-sm">Vue.js</span>
+                        <span class="px-3 py-1 bg-yellow-500/30 text-yellow-300 rounded-full text-sm">Laravel</span>
+                        <span class="px-3 py-1 bg-teal-500/30 text-teal-300 rounded-full text-sm">MySQL</span>
+                    </div>
+                    <div class="flex space-x-4">
+                        <a href="#" class="flex-1 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white py-3 px-6 rounded-xl text-center font-semibold transition-all duration-300">Live Demo</a>
+                        <a href="#" class="flex-1 border border-white/30 hover:border-purple-500 text-white py-3 px-6 rounded-xl text-center font-semibold transition-all duration-300">GitHub</a>
+                    </div>
                 </div>
-                <p class="text-center text-gray-500">Copyright 2026&copy; Z_Forz</p>
-                <div class="">
-                    <i class="fa-brands fa-instagram fa-2xl" style="color: rgb(0, 0, 0);"></i>
-                    <i class="fa-brands fa-tiktok fa-2xl" style="color: rgb(0, 0, 0);"></i>
-                    <i class="fa-brands fa-youtube fa-2xl" style="color: rgb(0, 0, 0);"></i>
+
+                <!-- Project Card 3 -->
+                <div class="group bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 hover:border-purple-500 transition-all duration-300 hover:scale-105 hover:bg-white/20">
+                    <div class="relative overflow-hidden rounded-xl mb-6 h-48">
+                        <img src="https://images.unsplash.com/photo-1558494949-efed86a57cf2?w=400&h=300&fit=crop" 
+                             alt="Portfolio" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Portfolio Website</h3>
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        Website portofolio responsif dengan animasi modern menggunakan Tailwind CSS dan vanilla JavaScript.
+                    </p>
+                    <div class="flex space-x-2 mb-6">
+                        <span class="px-3 py-1 bg-emerald-500/30 text-emerald-300 rounded-full text-sm">HTML/CSS</span>
+                        <span class="px-3 py-1 bg-cyan-500/30 text-cyan-300 rounded-full text-sm">Tailwind</span>
+                        <span class="px-3 py-1 bg-orange-500/30 text-orange-300 rounded-full text-sm">JavaScript</span>
+                    </div>
+                    <div class="flex space-x-4">
+                        <a href="#" class="flex-1 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white py-3 px-6 rounded-xl text-center font-semibold transition-all duration-300">Live Demo</a>
+                        <a href="#" class="flex-1 border border-white/30 hover:border-purple-500 text-white py-3 px-6 rounded-xl text-center font-semibold transition-all duration-300">GitHub</a>
+                    </div>
                 </div>
             </div>
-        </footer>
-    </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-32 px-6 bg-black/30">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-4xl md:text-5xl font-bold mb-8 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                Mari Berkolaborasi
+            </h2>
+            <p class="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
+                Punya proyek menarik? Mari kita wujudkan bersama! Hubungi saya sekarang juga.
+            </p>
+            <div class="grid md:grid-cols-3 gap-6 max-w-2xl mx-auto mb-12">
+                <div class="p-6">
+                    <div class="w-16 h-16 bg-purple-500/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <h4 class="text-xl font-semibold mb-2">Email</h4>
+                    <a href="mailto:nama@email.com" class="text-gray-300 hover:text-purple-400 transition-colors">nama@email.com</a>
+                </div>
+                <div class="p-6">
+                    <div class="w-16 h-16 bg-pink-500/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2V9z"></path>
+                        </svg>
+                    </div>
+                    <h4 class="text-xl font-semibold mb-2">LinkedIn</h4>
+                    <a href="#" class="text-gray-300 hover:text-purple-400 transition-colors">linkedin.com/in/nama</a>
+                </div>
+                <div class="p-6">
+                    <div class="w-16 h-16 bg-blue-500/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                        </svg>
+                    </div>
+                    <h4 class="text-xl font-semibold mb-2">WhatsApp</h4>
+                    <a href="https://wa.me/628123456789" class="text-gray-300 hover:text-purple-400 transition-colors">+62 812-3456-7890</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black/90 border-t border-white/10 py-12 px-6">
+        <div class="max-w-6xl mx-auto text-center">
+            <div class="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent mb-4">
+                Nama Anda
+            </div>
+            <p class="text-gray-400 mb-6">
+                © 2024 Nama Anda. Dibuat dengan ❤️ menggunakan Tailwind CSS.
+            </p>
+            <div class="flex justify-center space-x-6 text-gray-400">
+                <a href="#" class="hover:text-purple-400 transition-colors">Privacy</a>
+                <a href="#" class="hover:text-purple-400 transition-colors">Terms</a>
+                <a href="#" class="hover:text-purple-400 transition-colors">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling untuk navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>

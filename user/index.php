@@ -1,3 +1,23 @@
+<?php
+
+include '../config.php';
+
+if (isset($_POST['add-projects'])) {
+    $judul_project = $_POST['judul_project'];
+    $deskripsi = $_POST['deskripsi'];
+    $link = $_POST['link'];
+    $nama_file = $_FILES['gambar_project']['name'];
+
+    $stmt = $conn->prepare('INSERT INTO projects (judul_project, gambar_project, deskripsi, link, dibuat, selesai, teknologi) VALUES (?, ?, ?, ?, ?, ?, ?)');
+    $stmt->bind_param('sssssss', $judul_project, $nama_file_baru, $deskripsi, $link, $dibuat, $selesai, $teknologi);
+    $stmt->execute();
+    header('location: ../user/index.php');
+    exit;
+    
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,8 +55,8 @@
     <!-- Home Section -->
     <section id="home" class="min-h-screen flex items-center justify-center pt-20 px-6">
         <div class="max-w-4xl text-center">
-            <img src="profile.jpg" 
-                 alt="Profile" class="w-48 h-48 rounded-full mx-auto mb-8 shadow-2xl border-4 border-purple-500">
+            <img src="../images/elnunjuk.jpeg" 
+                 alt="Profile" class="w-80 h-80 rounded-full mx-auto mb-8 shadow-2xl border-4 border-purple-500">
             <h1 class="text-5xl md:text-7xl font-bold bg-gradient-to-r from-purple-400 via-pink-400 to-purple-500 bg-clip-text text-transparent mb-6">
                 MUhammad Taufiqurrohman
             </h1>
@@ -83,7 +103,7 @@
                     </ul>
                 </div>
                 <div class="relative">
-                    <img src="" 
+                    <img src="../images/elek.jpeg" 
                          alt="About" class="rounded-2xl shadow-2xl w-full h-96 object-cover">
                 </div>
             </div>
@@ -100,7 +120,7 @@
                 <!-- Project Card 1 -->
                 <div class="group bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 hover:border-purple-500 transition-all duration-300 hover:scale-105 hover:bg-white/20">
                     <div class="relative overflow-hidden rounded-xl mb-6 h-48">
-                        <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=300&fit=crop" 
+                        <img src="../uploads/<?= $row['gambar_project']; ?>" width="200" 
                              alt="E-commerce" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     </div>
@@ -112,48 +132,6 @@
                         <span class="px-3 py-1 bg-purple-500/30 text-purple-300 rounded-full text-sm">React</span>
                         <span class="px-3 py-1 bg-blue-500/30 text-blue-300 rounded-full text-sm">Node.js</span>
                         <span class="px-3 py-1 bg-green-500/30 text-green-300 rounded-full text-sm">MongoDB</span>
-                    </div>
-                    <div class="flex space-x-4">
-                        <a href="#" class="flex-1 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white py-3 px-6 rounded-xl text-center font-semibold transition-all duration-300">Live Demo</a>
-                        <a href="#" class="flex-1 border border-white/30 hover:border-purple-500 text-white py-3 px-6 rounded-xl text-center font-semibold transition-all duration-300">GitHub</a>
-                    </div>
-                </div>
-
-                <!-- Project Card 2 -->
-                <div class="group bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 hover:border-purple-500 transition-all duration-300 hover:scale-105 hover:bg-white/20">
-                    <div class="relative overflow-hidden rounded-xl mb-6 h-48 bg-gradient-to-br from-blue-500 to-purple-600">
-                        <div class="absolute inset-0 flex items-center justify-center text-white font-bold text-2xl opacity-20">Dashboard</div>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-3">Admin Dashboard</h3>
-                    <p class="text-gray-300 mb-6 leading-relaxed">
-                        Dashboard admin lengkap dengan chart interaktif, real-time data, dan sistem autentikasi JWT.
-                    </p>
-                    <div class="flex space-x-2 mb-6">
-                        <span class="px-3 py-1 bg-indigo-500/30 text-indigo-300 rounded-full text-sm">Vue.js</span>
-                        <span class="px-3 py-1 bg-yellow-500/30 text-yellow-300 rounded-full text-sm">Laravel</span>
-                        <span class="px-3 py-1 bg-teal-500/30 text-teal-300 rounded-full text-sm">MySQL</span>
-                    </div>
-                    <div class="flex space-x-4">
-                        <a href="#" class="flex-1 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white py-3 px-6 rounded-xl text-center font-semibold transition-all duration-300">Live Demo</a>
-                        <a href="#" class="flex-1 border border-white/30 hover:border-purple-500 text-white py-3 px-6 rounded-xl text-center font-semibold transition-all duration-300">GitHub</a>
-                    </div>
-                </div>
-
-                <!-- Project Card 3 -->
-                <div class="group bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 hover:border-purple-500 transition-all duration-300 hover:scale-105 hover:bg-white/20">
-                    <div class="relative overflow-hidden rounded-xl mb-6 h-48">
-                        <img src="https://images.unsplash.com/photo-1558494949-efed86a57cf2?w=400&h=300&fit=crop" 
-                             alt="Portfolio" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-3">Portfolio Website</h3>
-                    <p class="text-gray-300 mb-6 leading-relaxed">
-                        Website portofolio responsif dengan animasi modern menggunakan Tailwind CSS dan vanilla JavaScript.
-                    </p>
-                    <div class="flex space-x-2 mb-6">
-                        <span class="px-3 py-1 bg-emerald-500/30 text-emerald-300 rounded-full text-sm">HTML/CSS</span>
-                        <span class="px-3 py-1 bg-cyan-500/30 text-cyan-300 rounded-full text-sm">Tailwind</span>
-                        <span class="px-3 py-1 bg-orange-500/30 text-orange-300 rounded-full text-sm">JavaScript</span>
                     </div>
                     <div class="flex space-x-4">
                         <a href="#" class="flex-1 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white py-3 px-6 rounded-xl text-center font-semibold transition-all duration-300">Live Demo</a>

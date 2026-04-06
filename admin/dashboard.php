@@ -362,8 +362,8 @@ $project = $conn->query("SELECT * FROM projects ORDER BY id DESC");
                                 <input type="file" class="form-input" name="gambar_project"/>
                             </div>
                             <div class="form-group">
-                                <label class="form-label">Github</label>
-                                <input type="text" class="form-input" name="link" placeholder="Link github" value="<?= $editData['link'] ?? ''; ?>" required/>
+                                <label class="form-label">Link Project</label>
+                                <input type="text" class="form-input" name="link" placeholder="Link Project" value="<?= $editData['link'] ?? ''; ?>" required/>
                             </div>
                             <div class="form-group">
                                 <label class="form-label">Teknologi</label>

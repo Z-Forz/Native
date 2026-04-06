@@ -121,24 +121,31 @@ $project = $conn->query("SELECT * FROM projects ORDER BY id DESC");
             </h2>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Project Card 1 -->
-                 <?php while ( $row = $project->fetch_assoc()): ?>
-                <div class="group bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:border-purple-500 transition-all duration-300 hover:scale-105 hover:bg-white/20">
-                    <div class="relative overflow-hidden rounded-xl mb-6 h-48">
-                        <img src="../uploads/<?= $row['gambar_project']; ?>" width="200" 
-                             alt="<?= $row['judul_project'] ?>" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <?php while ( $row = $project->fetch_assoc()): ?>
+                <div class="group bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:border-purple-500 transition-all duration-300 hover:scale-105 hover:bg-purple-900/20 flex flex-col h-full">
+                    <div>
+                        <div class="relative overflow-hidden rounded-xl mb-6 h-48">
+                            <img src="../uploads/<?= $row['gambar_project']; ?>" 
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3"><?= $row['judul_project'] ?></h3>
+                        <p class="text-gray-300 mb-6 leading-relaxed">
+                            <?= $row['deskripsi']; ?>
+                        </p>
                     </div>
-                    <h3 class="text-2xl font-bold mb-3"><?= $row['judul_project'] ?></h3>
-                    <p class="text-gray-300 mb-6 leading-relaxed">
-                        <?= $row['deskripsi']; ?>
-                    </p>
-                    <div class="flex space-x-2 mb-6">
-                        <div class="px-3 py-1 bg-blue-500/30 text-blue-300 rounded-full text-sm">
+
+                    <div class="mt-auto">
+                        <div class="px-3 py-1 bg-blue-500/30 text-blue-300 rounded-full text-sm inline-block mb-3">
                             <?= $row['teknologi']; ?>
                         </div>
-                    </div>
-                    <div class="flex space-x-4">
-                        <a href="<?= $row['link'] ?>" class="bg-gradient-to-br from-purple-600 via-blue-500 to-purple-400 flex-1 border border-white/30 hover:border-purple-500 text-white py-3 px-6 rounded-xl text-center font-semibold transition-all duration-300">Kunjungi Project</a>
+
+                        <a href="<?= $row['link'] ?>" 
+                        class="bg-gradient-to-br from-purple-600 via-blue-500 to-purple-400 
+                        w-full block text-center border border-white/30 hover:border-purple-500
+                        hover:bg-gradient-to-br hover:from-purple-700 hover:via-blue-600 hover:to-purple-500 
+                        text-white py-3 px-6 rounded-xl font-semibold transition-all duration-300">
+                            Kunjungi Project
+                        </a>
                     </div>
                 </div>
                 <?php endwhile; ?>

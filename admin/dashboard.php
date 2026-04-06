@@ -139,7 +139,7 @@ $project = $conn->query("SELECT * FROM projects ORDER BY id DESC");
         .nav-item.active .nav-icon { opacity:1; }
         .sidebar-bottom { padding:16px 12px; border-top:1px solid var(--c-border); }
         .user-card { display:flex; align-items:center; gap:10px; padding:10px 12px; border-radius:10px; background:rgba(139,92,246,0.10); border:1px solid rgba(139,92,246,0.20); }
-        .avatar { width:32px; height:32px; border-radius:8px; background:var(--grad); display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:700; color:#fff; flex-shrink:0; }
+        .avatar { width:32px; height:32px; background:var(--grad); display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:700; color:#fff; flex-shrink:0; }
         .user-name { font-size:13px; font-weight:500; color:var(--c-text); }
         .user-role { font-size:10px; color:var(--c-purple2); text-transform:uppercase; letter-spacing:.06em; }
 
@@ -229,9 +229,9 @@ $project = $conn->query("SELECT * FROM projects ORDER BY id DESC");
     <!-- ═══ SIDEBAR ═══ -->
     <div id="sidebar">
         <div class="sidebar-logo">
-            <div class="logo-icon"><img src="" alt=""></div>
+            <div class="logo-icon text-lg font-bold">ZF</div>
             <div>
-                <div class="logo-text">AdminPanel</div>
+                <div class="logo-text">Z_Forz Panel</div>
                 <div class="logo-sub">Welcome, Admin</div>
             </div>
         </div>
@@ -269,9 +269,11 @@ $project = $conn->query("SELECT * FROM projects ORDER BY id DESC");
         </nav>
         <div class="sidebar-bottom">
             <div class="user-card">
-                <div class="avatar">AD</div>
+                <div class="avatar">
+                    <img src="../images/elnunjuk.jpeg" alt="User Avatar">
+                </div>
                 <div>
-                    <div class="user-name">Admin</div>
+                    <div class="user-name">Z_Forz</div>
                     <div class="user-role">King of Admin</div>
                 </div>
             </div>
@@ -294,8 +296,8 @@ $project = $conn->query("SELECT * FROM projects ORDER BY id DESC");
         </div>
 
         <div class="flex-1 overflow-y-auto p-7" style="flex: 1; overflow-y: auto; padding: 28px;">
-            <?php while ($row = $project->fetch_assoc()): ?>
             <!-- ══ DASHBOARD ══ -->
+            
             <div id="page-dashboard" class="page active">
                 <div class="section-header">
                     <span class="section-title">Project Terbaru</span>
@@ -307,13 +309,14 @@ $project = $conn->query("SELECT * FROM projects ORDER BY id DESC");
                             <tr><th>Nama Project</th><th>Teknologi</th><th>Tanggal Dibuat</th><th>Tanggal Selesai</th></tr>
                         </thead>
                         <tbody>
+                            <?php while ($row = $project->fetch_assoc()): ?>
                             <tr>
                                 <td><?= $row['judul_project']; ?></td>
                                 <td><?= $row['teknologi']; ?></td>
                                 <td><?= $row['dibuat'] ; ?></td>
                                 <td><?= $row['selesai']; ?></td>
                             </tr>
-
+                            <?php endwhile; ?>
                         </tbody>
                     </table>
                 </div>
@@ -326,6 +329,10 @@ $project = $conn->query("SELECT * FROM projects ORDER BY id DESC");
                     <button class="btn-sm btn-primary" onclick="showPage('createproject', document.querySelectorAll('.nav-item')[2])">+ Tambah Project</button>
                 </div>
                 <div class="project-grid">
+                    <?php 
+                    $project = $conn->query("SELECT * FROM projects ORDER BY id DESC");
+                    ?>
+                    <?php while ($row = $project->fetch_assoc()): ?>
                     <div class="project-card">
                         <img src="../uploads/<?= $row['gambar_project']; ?>"
                             style="width:100%;height:250px;object-fit:cover;border-radius:10px;margin-bottom:10px;" alt="">
@@ -340,10 +347,11 @@ $project = $conn->query("SELECT * FROM projects ORDER BY id DESC");
                             <a href="?hapus=<?= $row['id']; ?>" onclick="return confirm('Yakin hapus?')" class="btn-lg btn-danger">Hapus</a>
                         </div>
                     </div>
+                    <?php endwhile; ?>
                 </div>
             </div>
             
-            <?php endwhile; ?>
+            
             <!-- ══ CREATE / EDIT PROJECT ══ -->
             <div id="page-createproject" class="page">
                 <div class="section-header" style="margin-bottom:20px;">

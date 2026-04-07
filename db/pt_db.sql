@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Apr 06, 2026 at 05:41 AM
+-- Generation Time: Apr 07, 2026 at 02:13 AM
 -- Server version: 10.11.13-MariaDB-0ubuntu0.24.04.1
--- PHP Version: 8.4.14
+-- PHP Version: 8.3.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -38,6 +38,13 @@ CREATE TABLE `projects` (
   `created_at` timestamp NULL DEFAULT current_timestamp(),
   `teknologi` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `projects`
+--
+
+INSERT INTO `projects` (`id`, `judul_project`, `gambar_project`, `deskripsi`, `link`, `dibuat`, `selesai`, `created_at`, `teknologi`) VALUES
+(14, 'uihygtrd', '1775526758_job21.h.2.png', 'yufghjkl;', 'kmjhgfgd', '0003-09-08', '5432-07-06', '2026-04-07 01:52:38', '97654567890');
 
 -- --------------------------------------------------------
 
@@ -83,7 +90,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `projects`
 --
 ALTER TABLE `projects`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `users`
